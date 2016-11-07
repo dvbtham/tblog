@@ -1,0 +1,8 @@
+.btn-bottom-spacing{
+	margin-bottom: 18px;
+	text-transform: capitalize;
+}
+.btn-bottom-spacing>a{
+	text-decoration: none;
+	color: #FFF;
+}
