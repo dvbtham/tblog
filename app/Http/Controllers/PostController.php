@@ -98,11 +98,15 @@ class PostController extends Controller
         'body' => 'required']);
 
        $post = Post::find($id);
+       // case 1: 
+       $input = $request->all();
+       $post -> fill($input)->save();
+       
+       //case 2:
+       // $post->title = $request->input('title');
+       // $post->body = $request->input('body');
 
-       $post->title = $request->input('title');
-       $post->body = $request->input('body');
-
-       $post->save();
+       // $post->save();
 
        Session::flash('success', "Cập nhật bài viết thành công.");
 
