@@ -8,7 +8,7 @@ use App\Post;
 class PagesController extends Controller
 {
     public function getHomePage(){
-        $post = Post::all();
+        $post = Post::orderBy('created_at','desc')->paginate(5);
         return View('pages.home')->withPost($post);
     }
     public function getAboutPage(){

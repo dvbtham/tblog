@@ -3,14 +3,16 @@
    {!! Html::style("/css/parsley.css")!!}
 @stop
 
-@section('title','| Tạo mới bài viết')
-@section('pageTitle','Thêm mới bài viết')
+@section('title','| Cập nhật bài viết')
+@section('pageTitle')
+    {{ $post->title }}
+@stop
 
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             
-            {!! Form::open(['route' => 'posts.store','data-parsley-validate' => '']) !!}
+            {!! Form::model($post,['route' => ['posts.update',$post->id], 'method'=>'put']) !!}
 
                 {{Form::label('title','Tiêu đề: ')}}
                 {{Form::text('title',null,['class'=>'form-control','placeholder'=>'nhập tiêu đề','required' =>'','maxlength'=>'250','minlength'=>'6'])}}
@@ -21,7 +23,7 @@
                 'required' =>'Bạn bắt buộc phải nhập nội dung.','minlength'=>'6'])}}
                 <br>
                 {{Form::submit('Hoàn tất',['class'=>'btn btn-success'])}}
-                {{Html::linkRoute('posts.index','Hủy',"",['class'=>'btn btn-danger'])}}
+                {{Html::linkRoute('posts.index','Hủy',null,['class'=>'btn btn-danger'])}}
             {!! Form::close() !!}
         </div>
     </div>
