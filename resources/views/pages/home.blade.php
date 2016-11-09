@@ -15,7 +15,7 @@
             {{ $pt->title }}
         </h2>
         <h3 class="post-subtitle">
-            {{ $pt->body }}
+            {{ substr($pt->body ,0,150)}} {{ strlen($pt->body) > 150 ? "..." : ""}}
         </h3>
     </a>
     <p class="post-meta">Đăng bởi 

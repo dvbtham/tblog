@@ -5,7 +5,7 @@
 
 @section('title','| Tạo mới bài viết')
 @section('pageTitle','Thêm mới bài viết')
-
+@include('partials._siteheading')
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

@@ -7,7 +7,7 @@
 @section('pageTitle')
     {{ $post->title }}
 @stop
-
+@include('partials._siteheading')
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

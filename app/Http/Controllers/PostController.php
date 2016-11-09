@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(10);
 
         return View('posts.index')->withPosts($posts);
     }
@@ -94,7 +94,7 @@ class PostController extends Controller
     {
         //
        $this->validate($request, [
-        'title' => 'required|unique:posts|max:250',
+        'title' => 'required|max:250',
         'body' => 'required']);
 
        $post = Post::find($id);
