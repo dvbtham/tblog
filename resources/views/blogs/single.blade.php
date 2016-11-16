@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','| Chi tiết bài viết')
+@section('title',"| $post->title")
 <header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
 	<div class="container">
 		<div class="row">

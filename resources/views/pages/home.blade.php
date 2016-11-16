@@ -10,7 +10,7 @@
 
 @foreach($post->all() as $pt)
     <div class="post-preview">
-    <a href="/posts/{{$pt->id}}">
+    <a href="{{ route('single.blog',$pt->slug) }}">
         <h2 class="post-title">
             {{ $pt->title }}
         </h2>

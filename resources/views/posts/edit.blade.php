@@ -17,6 +17,9 @@
                 {{Form::label('title','Tiêu đề: ')}}
                 {{Form::text('title',null,['class'=>'form-control','placeholder'=>'nhập tiêu đề','required' =>'','maxlength'=>'250','minlength'=>'6'])}}
 
+                {{Form::label('slug','Slug: ')}}
+                {{Form::text('slug',null,['class'=>'form-control','placeholder'=>'slug','required' =>'','maxlength'=>'250','minlength'=>'6'])}}
+
                 {{Form::label('body','Nội dung: ')}}
                 {{Form::textarea('body',null,['class'=>'form-control',
                 'placeholder' =>'nhập nội dung bài viết',

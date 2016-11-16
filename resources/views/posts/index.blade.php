@@ -25,7 +25,7 @@
            @foreach($posts as $pt)
            <tr>
             <td>{{ $pt->id }}</td>
-            <td><a href="/posts/{{$pt->id}}">{{$pt->title}}</a></td>
+            <td><a href="{{ route('single.blog',$pt->slug) }}">{{$pt->title}}</a></td>
             <td>{{ date('d/m/Y',strtotime($pt->created_at)) }}</td>
             <td>{{ date('d/m/Y',strtotime($pt->updated_at)) }}</td>
             <td class="text-center">

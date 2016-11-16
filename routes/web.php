@@ -10,11 +10,18 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::group(['middleware' => 'web'], function () {
 
-Route::get('/',"PagesController@getHomePage");
+	Route::get('blog/{slug}',['as'=>'single.blog',
+		'uses'=>'BlogController@getSingle'])->where('slug','[\w\d\-\_]+');
+   
+	Route::get('/',"PagesController@getHomePage");
 
-Route::get('about', "PagesController@getAboutPage");
+	Route::get('about', "PagesController@getAboutPage");
 
-Route::get('contact',"PagesController@getContactPage");
+	Route::get('contact',"PagesController@getContactPage");
 
-Route::resource('posts',"PostController");
+	Route::resource('posts',"PostController");
+
+});
+
